@@ -1,8 +1,7 @@
-# Example Project
+# Parking system
 
-## Instructions
+Assessment 02 for Object Oriented Design
 
-### Getting Started
 
 
 

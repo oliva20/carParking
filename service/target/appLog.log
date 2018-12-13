@@ -1,0 +1,18 @@
+13:41:36.326 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - using dataFile:C:\Users\Andre\Desktop\Parking System\carParkService\service\.\target\testfile.xml
+13:41:36.332 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - dataFile does not exist creating new C:\Users\Andre\Desktop\Parking System\carParkService\service\.\target\testfile.xml
+13:41:36.340 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<meterList>
+    <meters/>
+</meterList>
+
+13:41:36.356 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<meterList>
+    <lastMeterId>1</lastMeterId>
+    <meters>
+        <meter>
+            <id>1</id>
+            <location>testFieldA</location>
+        </meter>
+    </meters>
+</meterList>
+

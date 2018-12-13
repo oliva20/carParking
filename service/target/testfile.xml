@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<meterList>
+    <lastMeterId>1</lastMeterId>
+    <meters>
+        <meter>
+            <id>1</id>
+            <location>testFieldA</location>
+        </meter>
+    </meters>
+</meterList>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<meterList>
+    <lastMeterId>4</lastMeterId>
+    <meters>
+        <meter>
+            <id>1</id>
+            <location>Location0</location>
+            <price>Price0</price>
+            <field_C>field_C_0</field_C>
+        </meter>
+        <meter>
+            <id>3</id>
+            <location>field_A_Update</location>
+            <price>field_B_Update</price>
+            <field_C>field_C_2</field_C>
+        </meter>
+        <meter>
+            <id>4</id>
+            <location>Location3</location>
+            <price>Price3</price>
+            <field_C>field_C_3</field_C>
+        </meter>
+    </meters>
+</meterList>

@@ -1,0 +1,7 @@
+org\solent\carPark\model\ServiceFactory.class
+org\solent\carPark\model\RestInterface.class
+org\solent\carPark\model\Meter.class
+org\solent\carPark\model\MeterList.class
+org\solent\carPark\model\ServiceFacade.class
+org\solent\carPark\model\MeterDAO.class
+org\solent\carPark\model\ReplyMessage.class

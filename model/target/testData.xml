@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<replyMessage>
+    <code>200</code>
+    <debugMessage>This is a debug messsage</debugMessage>
+    <meterList>
+        <meters>
+            <meter>
+                <id>0</id>
+                <location>Southampton 0</location>
+            </meter>
+            <meter>
+                <id>1</id>
+                <location>Southampton 1</location>
+            </meter>
+            <meter>
+                <id>2</id>
+                <location>Southampton 2</location>
+            </meter>
+        </meters>
+    </meterList>
+</replyMessage>

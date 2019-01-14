@@ -27,7 +27,7 @@ public class RestClientJerseyImplTest {
     public void restClientRetreiveTest() {
 
         RestClientJerseyImpl restClient = new RestClientJerseyImpl(baseUrl, mediaType);
-
+        
         // try to retreive an unknown entity
         ReplyMessage replyMessage = restClient.retrieveMeter(Integer.SIZE);
         assertNotNull(replyMessage);
@@ -51,7 +51,7 @@ public class RestClientJerseyImplTest {
         Meter entityTempate = new Meter();
         entityTempate.setLocation("abcd");
 
-        // try to retreive an unknown entity
+        // try to retreive an unknown meter
         ReplyMessage replyMessage = restClient.retrieveMatchingMeters(entityTempate);
         assertNotNull(replyMessage);
 

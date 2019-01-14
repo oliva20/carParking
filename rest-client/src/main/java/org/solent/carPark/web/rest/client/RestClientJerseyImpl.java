@@ -47,6 +47,7 @@ public class RestClientJerseyImpl implements RestInterface {
 
             Invocation.Builder builder = target.path("/retrievematching").request(mediaType);
             response = builder.post(javax.ws.rs.client.Entity.entity(meterTemplate, mediaType));
+            
 
             // read reply message
             replyMessage = response.readEntity(ReplyMessage.class);

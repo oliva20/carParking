@@ -7,14 +7,20 @@
             <meter>
                 <id>0</id>
                 <location>Southampton 0</location>
+                <time>2019-01-05T16:33:55.580Z</time>
+                <hour>4</hour>
             </meter>
             <meter>
                 <id>1</id>
                 <location>Southampton 1</location>
+                <time>2019-01-05T16:33:55.586Z</time>
+                <hour>4</hour>
             </meter>
             <meter>
                 <id>2</id>
                 <location>Southampton 2</location>
+                <time>2019-01-05T16:33:55.586Z</time>
+                <hour>4</hour>
             </meter>
         </meters>
     </meterList>

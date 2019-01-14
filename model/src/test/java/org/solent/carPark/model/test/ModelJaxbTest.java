@@ -63,7 +63,6 @@ public class ModelJaxbTest {
 
             for (int intityId = 0; intityId < 3; intityId++) {
                 Meter meter = new Meter();
-                ScheduleItem schedule = new ScheduleItem();
                 meter.setId(intityId);
                 meter.setLocation("Southampton "+ intityId);
                 meters.add(meter);
@@ -87,20 +86,6 @@ public class ModelJaxbTest {
             // check transmitted and recieved message are the same
             assertEquals(sw1.toString(), sw2.toString());
             
-            //testing meter object 
-            
-            System.out.println("---------------------------------TESTING METER OBJECT ----------------------------------"); 
-            Meter meterPriceTest = new Meter();
-            
-            ScheduleItem schedule = new ScheduleItem();
-                                    
-            schedule.setPrice("1.50");
-            
-            meterPriceTest.setPrice(schedule.getPrice());
-
-            System.out.println("Testing meter object, price should contain 1.50 " + meterPriceTest.getPrice());
-            
-            System.out.println("---------------------------FINISHED TESTING METER OBJECT ----------------------------------"); 
 
         } catch (JAXBException e) {
             throw new RuntimeException("problem testing jaxb marshalling", e);

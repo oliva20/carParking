@@ -5,40 +5,51 @@
  */
 package org.solent.carPark.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author Andre
  */
+
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+
 public class ScheduleItem {
 
-    String time;
+    public String time;
 
-    String price;
+    public String price;
 
-    Integer id;
-
-    public String getTime() {
-        return time;
-    }
-
-    public String getPrice() {
-        return price;
+    public Integer id;
+    
+    public void setTime(String time){
+        this.time = time; 
     }
     
-    public Integer getId(){
-        return this.id;
+    public void setPrice(String price){
+        this.price = price; 
     }
     
     public void setId(Integer id){
         this.id = id; 
     }
-
-    public void setTime(String time) {
-        this.time = time;
+      
+    public String getTime(){   
+        return time;
     }
-
-    public void setPrice(String price) {
-        this.price = price;
+    
+    public String getPrice(){
+        return price; 
     }
-
+    
+    public Integer getId(){
+        return id;
+    }
+    
 }

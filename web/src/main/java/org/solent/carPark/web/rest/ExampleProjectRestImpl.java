@@ -41,7 +41,7 @@ public class ExampleProjectRestImpl {
 
         try {
             if (meterTemplate == null) {
-                throw new IllegalArgumentException("entityTemplate request parameter must be set");
+                throw new IllegalArgumentException("meterTemplate request parameter must be set");
             }
             ReplyMessage replyMessage = new ReplyMessage();
 
@@ -65,6 +65,45 @@ public class ExampleProjectRestImpl {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
         }
     }
+    
+    
+    // GET localhost:8680/rest/example/retrieveInXML?id=9
+    @GET
+    @Path("/retrieveInXML")
+    @Consumes({MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_XML})
+    public Response retrieveInXML(@QueryParam("id") Integer id) {
+        try {
+            if (id == null) {
+                throw new IllegalArgumentException("id request parameter must be set");
+            }
+            ReplyMessage replyMessage = new ReplyMessage();
+
+            ServiceFacade serviceFacade = WebObjectFactory.getServiceFactory().getServiceFacade();
+            Meter meter = serviceFacade.retrieveMeter(id);
+            if (meter != null) {
+                LOG.debug("/retrieve id=" + id + " found entity :" + meter);
+                replyMessage.getMeterList().getMeters().add(meter);
+
+                replyMessage.setCode(Response.Status.OK.getStatusCode());
+                return Response.status(Response.Status.OK).entity(replyMessage).build();
+            } else {
+                LOG.debug("/retrieve id=" + id + " found no entity :");
+                replyMessage.setDebugMessage("/retrieve id=" + id + " found no entity");
+                replyMessage.setCode(Response.Status.OK.getStatusCode());
+                return Response.status(Response.Status.OK).entity(replyMessage).build();
+            }
+
+        } catch (Exception ex) {
+            LOG.error("error calling /retrieve ", ex);
+            ReplyMessage replyMessage = new ReplyMessage();
+            replyMessage.setCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode());
+            replyMessage.setDebugMessage("error calling /retrieve " + ex.getMessage());
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
+        }
+
+    }
+    
 
     // GET localhost:8680/rest/example/retrieve?id=9
     @GET

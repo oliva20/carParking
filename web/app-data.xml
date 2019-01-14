@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<entityList>
-    <lastEntityId>2</lastEntityId>
-    <entities/>
-</entityList>
+<meterList>
+    <lastMeterId>15</lastMeterId>
+    <meters>
+        <meter>
+            <id>15</id>
+            <location>Southamtpon</location>
+            <price>2</price>
+            <time>2019-01-05T16:29:57.673Z</time>
+            <hour>4</hour>
+        </meter>
+    </meters>
+</meterList>

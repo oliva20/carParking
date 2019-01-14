@@ -1,6 +1,10 @@
 package org.solent.carPark.model;
 
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,15 +15,14 @@ import org.solent.carPark.model.ScheduleItem;
 /**
  * Simple example entity with 3 fields
  *
- * @author cgallen
+ * @author abrasil
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Meter {
     
-    
     List<ScheduleItem> schedules = new ArrayList();
-    
+
     private Integer id;
 
     private String location = null;
@@ -28,27 +31,31 @@ public class Meter {
 
     private String price = null;
     
+    public String debugMessage = null; 
     
-    //grab a schedules by id
-
-    public ScheduleItem getScheduleById(Integer id){
-        ScheduleItem scheduleItem = new ScheduleItem();
-                
-        for(Integer i = 0; i > schedules.size(); i++){
-            
-             scheduleItem = schedules.get(i);
-            
-            if (Objects.equals(id, scheduleItem.getId())){
-                System.out.println("No schedule was found under entered id");
-                return scheduleItem;
+    Calendar time = Calendar.getInstance();
+    
+    int hour = time.get(Calendar.HOUR);
+    
+    String stringHour = Integer.toString(hour);
+    
+    public String price1; 
+    
+    public void setPrice1(){
+        for (int i = 0; i < schedules.size(); i++) {
+            ScheduleItem schedule = schedules.get(i);
+            //checking if local hour equals schedule hour
+            if (stringHour.equals(schedule.getTime())) {
+                this.price1 = schedule.getPrice();
             }
         }
-        
-        return scheduleItem; 
-        
     }
     
+    public String getPrice1(){
+        return price1; 
+    }
     
+
     public Integer getId() {
         return id;
     }
@@ -57,7 +64,7 @@ public class Meter {
         this.id = id;
     }
 
-    public String getlocation() {
+    public String getLocation() {
         return location;
     }
 
@@ -65,15 +72,24 @@ public class Meter {
         this.location = location;
     }
 
-    public String getPrice() {
+    public String getPrice(){
         return price;
-        
     }
+    
 
     public void setPrice(String price) {
-        this.price = price; 
+        
+        this.price = price;
+    
     }
-
+    
+    // function adds scheduleItem's to meter list
+    public String addSchedule(ScheduleItem schedule){
+        //adding schedule to meter
+        schedules.add(schedule);
+        return "Schedule added to meter";
+    }
+    
     @Override
     public String toString() {
         return "Entity{" + "id=" + id
@@ -105,5 +121,5 @@ public class Meter {
         }
         return true;
     }
-
+    
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.solent.carPark.model.Meter;
+import org.solent.carPark.model.ScheduleItem;
 import org.solent.carPark.model.ServiceFacade;
 import org.solent.carPark.model.ServiceFactory;
 import org.solent.carPark.service.ServiceFactoryImpl;
@@ -36,8 +37,19 @@ public class ServiceFacadeImplTest {
         serviceFacade.deleteAllMeters();
 
         Meter meter = new Meter();
-        meter.setLocation("testFieldA");
-
+        meter.setLocation("Southampton");
+        
+        ScheduleItem schedule1 = new ScheduleItem();
+        schedule1.setId(1);
+        schedule1.setPrice("2");
+        schedule1.setTime("6");
+        
+        meter.addSchedule(schedule1);
+        
+        meter.setPrice1();
+        
+        meter.getPrice1();
+        
         serviceFacade.createMeter(meter);
         List<Meter> retrievedEntities = serviceFacade.retrieveMatchingMeters(meter);
 

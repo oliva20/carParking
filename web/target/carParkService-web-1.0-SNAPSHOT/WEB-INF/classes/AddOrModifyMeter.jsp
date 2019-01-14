@@ -1,5 +1,5 @@
 <%-- 
-    Document   : AddOrModifyEntity
+    Document   : AddOrModifyMeter
     Created on : Nov 30, 2018, 11:17:38 PM
     Author     : cgallen
 --%>
@@ -9,7 +9,7 @@
 <%@page import="org.solent.carPark.web.WebObjectFactory"%>
 <%@page import="org.solent.carPark.model.ServiceFactory"%>
 <%@page import="org.solent.carPark.model.ServiceFacade"%>
-<%@page import="org.solent.carPark.model.Entity"%>
+<%@page import="org.solent.carPark.model.Meter"%>
 
 
 <%
@@ -38,7 +38,7 @@
     if ("modifyEntity".equals(action)) {
         try {
             entityId = Integer.parseInt(entityIdReq);
-            entity = serviceFacade.retrieveEntity(entityId);
+            entity = serviceFacade.retrieveMeter(entityId);
         } catch (Exception e) {
             errorMessage = "problem finding entity " + e.getMessage();
         }

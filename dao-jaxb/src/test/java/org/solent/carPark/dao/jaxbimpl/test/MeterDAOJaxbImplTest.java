@@ -17,7 +17,7 @@ import org.solent.carPark.model.MeterDAO;
 import org.solent.carPark.model.ScheduleItem;
 
 /**
- * tests for entityDao.createEntity(entity) entityDao.deleteEntity(Id) entityDao.retrieveAllEntities() entityDao.retrieveEntity(Id)
+ * tests for meterDao.createMeter(entity) entityDao.deleteEntity(Id) entityDao.retrieveAllEntities() entityDao.retrieveEntity(Id)
  * entityDao.retrieveMatchingEntites(entityTempate) entityDao.updateEntity(entity)
  *
  * @author cgallen
@@ -42,16 +42,16 @@ public class MeterDAOJaxbImplTest {
         // check that new file created
         assertTrue(file.exists());
 
-        // check there are no entities
+        // check there are no meters
         assertTrue(meterDao.retrieveAllMeters().isEmpty());
 
         // add a 3 meters
         int ENTITY_NUMBER = 4;
-        for (int intityId = 0; intityId < ENTITY_NUMBER; intityId++) {
+        for (int meterId = 0; meterId < ENTITY_NUMBER; meterId++) {
             Meter meter = new Meter();
           
-            meter.setLocation("Location" + intityId);
-            meter.setPrice("Price" + intityId); 
+            meter.setLocation("Location" + meterId);
+            meter.setPrice("Price" + meterId); 
 
             LOG.debug("adding meter:" + meter);
             
@@ -62,10 +62,10 @@ public class MeterDAOJaxbImplTest {
         // check 3 entities added
         assertTrue(ENTITY_NUMBER == meterDao.retrieveAllMeters().size());
 
-        // check return false for delete unknown entity
+        // check return false for delete unknown meter
         assertFalse(meterDao.deleteMeter(Integer.SIZE));
 
-        // find an entity to delete
+        // find an meter to delete
         List<Meter> elist = meterDao.retrieveAllMeters();
         Integer idToDelete = elist.get(1).getId();
         LOG.debug("deleting  entity:" + idToDelete);
@@ -81,39 +81,40 @@ public class MeterDAOJaxbImplTest {
         assertTrue(ENTITY_NUMBER - 1 == elist2.size());
 
         // update entity
-        Meter entityToUpdate = elist2.get(1);
-        LOG.debug("updating entity: " + entityToUpdate);
+        Meter meterToUpdate = elist2.get(1);
+        LOG.debug("updating meter: " + meterToUpdate);
 
-        // add 3 newProperties for entity
-        entityToUpdate.setLocation("field_A_Update");
-        entityToUpdate.setPrice("field_B_Update");
-        LOG.debug("update template: " + entityToUpdate);
+        // add 2 new propeties for meter
+        meterToUpdate.setLocation("location_update");
+        meterToUpdate.setPrice("price_update");
+        LOG.debug("update meter: " + meterToUpdate);
 
-        Meter updatedEntity = meterDao.updateMeter(entityToUpdate);
-        LOG.debug("updated entity: " + updatedEntity);
-        assertNotNull(updatedEntity);
+        Meter updatedMeter = meterDao.updateMeter(meterToUpdate);
+        LOG.debug("updated meter: " + updatedMeter);
+        assertNotNull(updatedMeter);
 
-        // check entity updated
-        Meter retrievedEntity = meterDao.retrieveMeter(updatedEntity.getId());
-        LOG.debug("retreived entity: " + retrievedEntity);
-        assertEquals(entityToUpdate.getlocation(), retrievedEntity.getlocation());
-        assertEquals(entityToUpdate.getlocation(), retrievedEntity.getlocation());
+        // check meter updated
+        Meter retrievedMeter = meterDao.retrieveMeter(updatedMeter.getId());
+        LOG.debug("retreived meter: " + retrievedMeter);
+        assertEquals(meterToUpdate.getLocation(), retrievedMeter.getLocation());
+        assertEquals(meterToUpdate.getLocation(), retrievedMeter.getLocation());
 
-        // test retrieve matching entities
-        List<Meter> entityList = meterDao.retrieveAllMeters();
-        Meter searchfor = entityList.get(2);
+        // test retrieve matching meters
+        List<Meter> meterList = meterDao.retrieveAllMeters();
+        Meter searchfor = meterList.get(2);
         LOG.debug("searching for: " + searchfor);
-
+        
         Meter template = new Meter();
         template.setPrice(searchfor.getPrice());
         LOG.debug("using template : " + template);
-
+   
         List<Meter> retrievedList = meterDao.retrieveMatchingMeters(template);
+
         assertEquals(1, retrievedList.size());
 
         LOG.debug("found : " + retrievedList.get(0));
         assertEquals(searchfor, retrievedList.get(0));
-
+        
     }
 
 }

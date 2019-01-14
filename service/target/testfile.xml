@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
-    <lastMeterId>1</lastMeterId>
+    <lastMeterId>4</lastMeterId>
     <meters>
         <meter>
-            <id>1</id>
-            <location>testFieldA</location>
+            <schedules>
+                <time>6</time>
+                <price>2</price>
+                <id>1</id>
+            </schedules>
+            <id>4</id>
+            <location>Southampton</location>
+            <time>2019-01-07T18:10:30.852Z</time>
+            <hour>6</hour>
+            <stringHour>6</stringHour>
+            <price1>2</price1>
         </meter>
     </meters>
 </meterList>

@@ -45,7 +45,7 @@ public class ReplyMessage {
 
     @Override
     public String toString() {
-        return "ReplyMessage{" + "code=" + code + ", debugMessage=" + debugMessage + ", entityList=" + meterList + '}';
+        return "ReplyMessage{" + "code=" + code + ", debugMessage=" + debugMessage + ", meterList=" + meterList + '}';
     }
 
 

@@ -6,19 +6,22 @@
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <field_C>field_C_0</field_C>
+            <time>2019-01-02T15:57:27.932Z</time>
+            <hour>3</hour>
         </meter>
         <meter>
             <id>3</id>
-            <location>field_A_Update</location>
-            <price>field_B_Update</price>
-            <field_C>field_C_2</field_C>
+            <location>location_update</location>
+            <price>price_update</price>
+            <time>2019-01-02T15:57:27.977Z</time>
+            <hour>3</hour>
         </meter>
         <meter>
             <id>4</id>
             <location>Location3</location>
             <price>Price3</price>
-            <field_C>field_C_3</field_C>
+            <time>2019-01-02T15:57:27.999Z</time>
+            <hour>3</hour>
         </meter>
     </meters>
 </meterList>

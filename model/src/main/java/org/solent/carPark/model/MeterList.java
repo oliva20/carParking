@@ -41,13 +41,13 @@ public class MeterList {
         return lastMeterId;
     }
 
-    public void setLastEntityId(Integer lastEntityId) {
-        this.lastMeterId = lastEntityId;
+    public void setLastMeterId(Integer lastMeterId) {
+        this.lastMeterId = lastMeterId;
     }
 
     @Override
     public String toString() {
-        return "EntityList{" + "lastEntityId=" + lastMeterId + ", entities=" + meters + '}';
+        return "MeterList{" + "lastMeterId=" + lastMeterId + ", Meters=" + meters + '}';
     }
 
 

@@ -11,6 +11,7 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 import org.solent.carPark.model.Meter;
 import org.solent.carPark.model.MeterDAO;
 import org.solent.carPark.model.MeterList;
+import org.solent.carPark.model.ScheduleItem;
 
 /**
  *
@@ -54,16 +56,16 @@ public class MeterDAOJaxbImpl implements MeterDAO {
     }
 
     @Override
-    public Meter createMeter(Meter entity) {
-        if (entity == null) {
-            throw new IllegalArgumentException("entity cannot be null");
+    public Meter createMeter(Meter meter) {
+        if (meter == null) {
+            throw new IllegalArgumentException("meter cannot be null");
         }
         synchronized (Lock) {
             // set initial id if not set or increment by 1
             Integer id = (meterList.getLastMeterId()==null) ? 1 : meterList.getLastMeterId() + 1;
 
-            meterList.setLastEntityId(id);
-            Meter ecopy = copy(entity);
+            meterList.setLastMeterId(id);
+            Meter ecopy = copy(meter);
             ecopy.setId(id);
             meterList.getMeters().add(ecopy);
             save();
@@ -132,7 +134,7 @@ public class MeterDAOJaxbImpl implements MeterDAO {
     @Override
     public List<Meter> retrieveMatchingMeters(Meter meterTemplate) {
         if (meterTemplate == null) {
-            throw new IllegalArgumentException("entityTemplate cannot be null");
+            throw new IllegalArgumentException("meterTemplate cannot be null");
         }
         List<Meter> returnList = new ArrayList<Meter>();
         for (Meter meter : meterList.getMeters()) {
@@ -142,8 +144,8 @@ public class MeterDAOJaxbImpl implements MeterDAO {
                     match = false;
                 }
             };
-            if (meterTemplate.getlocation()!= null) {
-                if (!meterTemplate.getlocation().equals(meter.getlocation())) {
+            if (meterTemplate.getLocation()!= null) {
+                if (!meterTemplate.getLocation().equals(meter.getLocation())) {
                     match = false;
                 }
             };
@@ -163,16 +165,16 @@ public class MeterDAOJaxbImpl implements MeterDAO {
     @Override
     public Meter updateMeter(Meter meterTemplate) {
         if (meterTemplate == null) {
-            throw new IllegalArgumentException("entity cannot be null");
+            throw new IllegalArgumentException("meter cannot be null");
         }
         synchronized (Lock) {
             for (Meter en : meterList.getMeters()) {
                 if (meterTemplate.getId().equals(en.getId())) {
                     boolean changedfield = false;
 
-                    // update properties fields if only if entityTemplate field is set
-                    if (meterTemplate.getlocation()!= null) {
-                        en.setLocation(meterTemplate.getlocation());
+                    // update properties fields if only if meterTemplate field is set
+                    if (meterTemplate.getLocation()!= null) {
+                        en.setLocation(meterTemplate.getLocation());
                         changedfield = true;
                     }
                     if (meterTemplate.getPrice() != null) {

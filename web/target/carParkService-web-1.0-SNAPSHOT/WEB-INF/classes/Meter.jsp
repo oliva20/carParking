@@ -21,8 +21,15 @@
     </head>
     
     <%
-    ServiceFacade serviceFacade = (ServiceFacade) session.getAttribute("serviceFacade");
-    
+        ServiceFacade serviceFacade = (ServiceFacade) session.getAttribute("serviceFacade");
+        
+        //Request fields
+        
+        String hours = (String) request.getParameter("hours");
+        
+        Integer hoursToInt = Integer.parseInt(hours);
+        
+          
     %> 
     <body>
         
@@ -41,7 +48,9 @@
         
         <p>Please select the number of hours: </p>
         
-        <input type="text" name="price" value ="<%%>">  
+        <input type="text" name="hours" value ="<%%>">
+        <input type="submit" name="price">   
+        
         
       
     </body>

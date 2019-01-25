@@ -1,173 +1,209 @@
-15:57:27.908 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - using dataFile:C:\Users\Andre\Desktop\Parking System\carParkService\dao-jaxb\target\testDaofile.xml
-15:57:27.918 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - dataFile does not exist creating new C:\Users\Andre\Desktop\Parking System\carParkService\dao-jaxb\target\testDaofile.xml
-15:57:27.931 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.021 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - using dataFile:C:\Users\Andre\Desktop\Parking System\carParkService\dao-jaxb\target\testDaofile.xml
+22:18:16.040 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - dataFile does not exist creating new C:\Users\Andre\Desktop\Parking System\carParkService\dao-jaxb\target\testDaofile.xml
+22:18:16.058 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <meters/>
 </meterList>
 
-15:57:27.932 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Entity{id=null, Location=Location0, Price=Price0}
-15:57:27.963 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.059 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Meter{id=null, Location=Location0, Price=Price0}
+22:18:16.098 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>1</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:27.963 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Entity{id=null, Location=Location1, Price=Price1}
-15:57:27.977 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.099 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Meter{id=null, Location=Location1, Price=Price1}
+22:18:16.121 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>2</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>2</id>
             <location>Location1</location>
             <price>Price1</price>
-            <time>2019-01-02T15:57:27.963Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.099Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:27.978 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Entity{id=null, Location=Location2, Price=Price2}
-15:57:27.998 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.122 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Meter{id=null, Location=Location2, Price=Price2}
+22:18:16.144 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>3</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>2</id>
             <location>Location1</location>
             <price>Price1</price>
-            <time>2019-01-02T15:57:27.963Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.099Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>3</id>
             <location>Location2</location>
             <price>Price2</price>
-            <time>2019-01-02T15:57:27.977Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.122Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:27.999 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Entity{id=null, Location=Location3, Price=Price3}
-15:57:28.024 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.149 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - adding meter:Meter{id=null, Location=Location3, Price=Price3}
+22:18:16.172 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>4</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>2</id>
             <location>Location1</location>
             <price>Price1</price>
-            <time>2019-01-02T15:57:27.963Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.099Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>3</id>
             <location>Location2</location>
             <price>Price2</price>
-            <time>2019-01-02T15:57:27.977Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.122Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>4</id>
             <location>Location3</location>
             <price>Price3</price>
-            <time>2019-01-02T15:57:27.999Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.149Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:28.051 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - deleting  entity:2
-15:57:28.077 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.210 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - deleting  entity:2
+22:18:16.220 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>4</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>3</id>
             <location>Location2</location>
             <price>Price2</price>
-            <time>2019-01-02T15:57:27.977Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.122Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>4</id>
             <location>Location3</location>
             <price>Price3</price>
-            <time>2019-01-02T15:57:27.999Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.149Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:28.089 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - updating meter: Entity{id=3, Location=Location2, Price=Price2}
-15:57:28.089 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - update meter: Entity{id=3, Location=location_update, Price=price_update}
-15:57:28.099 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+22:18:16.236 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - updating meter: Meter{id=3, Location=Location2, Price=Price2}
+22:18:16.236 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - update meter: Meter{id=3, Location=location_update, Price=price_update}
+22:18:16.247 [main] DEBUG org.solent.carPark.dao.jaxbimpl.MeterDAOJaxbImpl - saving xml to file:<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
     <lastMeterId>4</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>3</id>
             <location>location_update</location>
             <price>price_update</price>
-            <time>2019-01-02T15:57:27.977Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.122Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>4</id>
             <location>Location3</location>
             <price>Price3</price>
-            <time>2019-01-02T15:57:27.999Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.149Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>
 
-15:57:28.107 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - updated meter: Entity{id=3, Location=location_update, Price=price_update}
-15:57:28.110 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - retreived meter: Entity{id=3, Location=location_update, Price=price_update}
-15:57:28.123 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - searching for: Entity{id=4, Location=Location3, Price=Price3}
-15:57:28.124 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - using template : Entity{id=null, Location=null, Price=Price3}
-15:57:28.126 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - found : Entity{id=4, Location=Location3, Price=Price3}
+22:18:16.252 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - updated meter: Meter{id=3, Location=location_update, Price=price_update}
+22:18:16.255 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - retreived meter: Meter{id=3, Location=location_update, Price=price_update}
+22:18:16.262 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - searching for: Meter{id=4, Location=Location3, Price=Price3}
+22:18:16.263 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - using template : Meter{id=null, Location=null, Price=Price3}
+22:18:16.267 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - found : Meter{id=4, Location=Location3, Price=Price3}
+22:18:16.268 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - Created schedule: Schedule{id=null, Price=2, Time=10}
+22:18:16.269 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - Created schedule: Schedule{id=null, Price=2, Time=10}
+22:18:16.269 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - Added schedule: Schedule{id=1, Price=2, Time=10}
+22:18:16.270 [main] DEBUG org.solent.carPark.dao.jaxbimpl.test.MeterDAOJaxbImplTest - Added schedule: Schedule{id=2, Price=2, Time=11}

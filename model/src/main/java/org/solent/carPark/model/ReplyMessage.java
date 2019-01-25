@@ -16,7 +16,7 @@ public class ReplyMessage {
 
     private String debugMessage;
     
-    private MeterList meterList = new MeterList();
+    private Meter meter= new Meter();
 
 
     public Integer getCode() {
@@ -35,18 +35,20 @@ public class ReplyMessage {
         this.debugMessage = debugMessage;
     }
 
-    public MeterList getMeterList() {
-        return meterList;
+    public Meter getMeter() {
+        return meter;
     }
 
-    public void setMeterList(MeterList meterList) {
-        this.meterList = meterList;
+    public void setMeter(Meter meter) {
+        this.meter = meter;
     }
 
     @Override
     public String toString() {
-        return "ReplyMessage{" + "code=" + code + ", debugMessage=" + debugMessage + ", meterList=" + meterList + '}';
+        return "ReplyMessage{" + "code=" + code + ", debugMessage=" + debugMessage + ", meter=" + meter + '}';
     }
+
+ 
 
 
 

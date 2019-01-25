@@ -33,76 +33,8 @@ public class ExampleProjectRestImpl {
 
     private static final Logger LOG = LoggerFactory.getLogger(ExampleProjectRestImpl.class);
 
-    @POST
-    @Path("/retrievematching")
-    @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response retrieveMatchingEntites(Meter meterTemplate) {
-
-        try {
-            if (meterTemplate == null) {
-                throw new IllegalArgumentException("meterTemplate request parameter must be set");
-            }
-            ReplyMessage replyMessage = new ReplyMessage();
-
-            ServiceFacade serviceFacade = WebObjectFactory.getServiceFactory().getServiceFacade();
-            List<Meter> eList = serviceFacade.retrieveMatchingMeters(meterTemplate);
-
-            LOG.debug("/retrievematching entityTemplate: " + meterTemplate 
-                    + " found " + eList.size() + "entities");
-
-            replyMessage.getMeterList().getMeters().addAll(eList);
-
-            replyMessage.setCode(Response.Status.OK.getStatusCode());
-
-            return Response.status(Response.Status.OK).entity(replyMessage).build();
-
-        } catch (Exception ex) {
-            LOG.error("error calling /retrievematching ", ex);
-            ReplyMessage replyMessage = new ReplyMessage();
-            replyMessage.setCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode());
-            replyMessage.setDebugMessage("error calling /retrievematching " + ex.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
-        }
-    }
-    
-    
-    // GET localhost:8680/rest/example/retrieveInXML?id=9
-    @GET
-    @Path("/retrieveInXML")
-    @Consumes({MediaType.APPLICATION_XML})
-    @Produces({MediaType.APPLICATION_XML})
-    public Response retrieveInXML(@QueryParam("id") Integer id) {
-        try {
-            if (id == null) {
-                throw new IllegalArgumentException("id request parameter must be set");
-            }
-            ReplyMessage replyMessage = new ReplyMessage();
-
-            ServiceFacade serviceFacade = WebObjectFactory.getServiceFactory().getServiceFacade();
-            Meter meter = serviceFacade.retrieveMeter(id);
-            if (meter != null) {
-                LOG.debug("/retrieve id=" + id + " found entity :" + meter);
-                replyMessage.getMeterList().getMeters().add(meter);
-
-                replyMessage.setCode(Response.Status.OK.getStatusCode());
-                return Response.status(Response.Status.OK).entity(replyMessage).build();
-            } else {
-                LOG.debug("/retrieve id=" + id + " found no entity :");
-                replyMessage.setDebugMessage("/retrieve id=" + id + " found no entity");
-                replyMessage.setCode(Response.Status.OK.getStatusCode());
-                return Response.status(Response.Status.OK).entity(replyMessage).build();
-            }
-
-        } catch (Exception ex) {
-            LOG.error("error calling /retrieve ", ex);
-            ReplyMessage replyMessage = new ReplyMessage();
-            replyMessage.setCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode());
-            replyMessage.setDebugMessage("error calling /retrieve " + ex.getMessage());
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
-        }
-
-    }
+ 
+   
     
 
     // GET localhost:8680/rest/example/retrieve?id=9
@@ -121,7 +53,7 @@ public class ExampleProjectRestImpl {
             Meter meter = serviceFacade.retrieveMeter(id);
             if (meter != null) {
                 LOG.debug("/retrieve id=" + id + " found entity :" + meter);
-                replyMessage.getMeterList().getMeters().add(meter);
+                replyMessage.setMeter(meter);
 
                 replyMessage.setCode(Response.Status.OK.getStatusCode());
                 return Response.status(Response.Status.OK).entity(replyMessage).build();

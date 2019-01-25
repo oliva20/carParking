@@ -29,12 +29,12 @@
     String meterPriceReq = (String) request.getParameter("price");
 
     String errorMessage = "";
-    if ("deleteEntity".equals(action)) {
+    if ("deleteMeter".equals(action)) {
         try {
             Integer meterId = Integer.parseInt(meterIdReq);
             serviceFacade.deleteMeter(meterId);
         } catch (Exception e) {
-            errorMessage = "problem deleting Entity " + e.getMessage();
+            errorMessage = "problem deleting Meter " + e.getMessage();
         }
     } else if ("modifyMeter".equals(action)) {
         try {
@@ -45,10 +45,10 @@
             newMeter.setPrice(meterPriceReq);
             Meter meter = serviceFacade.updateMeter(newMeter);
             if (meter == null) {
-                errorMessage = "problem modifying Entity. could not find entityId " + meterId;
+                errorMessage = "problem modifying Meter. could not find meterId " + meterId;
             }
         } catch (Exception e) {
-            errorMessage = "problem modifying Entity " + e.getMessage();
+            errorMessage = "problem modifying Meter " + e.getMessage();
         }
     } else if ("createMeter".equals(action)) {
         try {
@@ -60,15 +60,13 @@
                 errorMessage = "problem creating Meter. Service returned null ";
             }
         } catch (Exception e) {
-            errorMessage = "problem creating  Meter " + e.getMessage();
+            errorMessage = "problem creating Meter " + e.getMessage();
         }
     } 
 
     List<Meter> meterList = serviceFacade.retrieveAllMeters();
 
 %>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -86,24 +84,30 @@
                 <th>id</th>
                 <th>Location</th>
                 <th>Price</th>
-                <th></th>
+                
             </tr>
             <%  for (Meter meter : meterList) {
             %>
             <tr>
                 <td><%=meter.getId()%></td>
+                <td><%=meter.getLocation()%></td>
                 <td><%=meter.getPrice()%></td>
                 
                 <td>
                     <form action="AddOrModifyMeter.jsp">
                         <input type="hidden" name="action" value="modifyMeter">
                         <input type="hidden" name="meterId" value="<%=meter.getId()%>">
-                        <input type="submit" value="Modify Entity">
+                        <input type="submit" value="Modify Meter">
                     </form>
                     <form action="ListMeters.jsp">
                         <input type="hidden" name="action" value="deleteMeter">
                         <input type="hidden" name="meterId" value="<%=meter.getId()%>">
                         <input type="submit" value="Delete Meter">
+                    </form>
+                    <form action="Meter.jsp">
+                        <input type="hidden" name="action" value="meterUI">
+                        <input type="hidden" name="meterId" value="<%=meter.getId()%>">
+                        <input type="submit" value="Meter UI">
                     </form>
                 </td>
             </tr>

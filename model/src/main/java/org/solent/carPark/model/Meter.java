@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,35 +14,35 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.solent.carPark.model.ScheduleItem;
 
 /**
- * Simple example entity with 3 fields
  *
  * @author abrasil
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Meter {
-    
-    List<ScheduleItem> schedules = new ArrayList();
+
+    private List<ScheduleItem> schedules = new ArrayList();
+
+    private Integer lastScheduleId = 0;
 
     private Integer id;
 
     private String location = null;
-    
-    //setting setField variable so meter can get setField data from schedules item
 
+    //setting setField variable so meter can get setField data from schedules item
     private String price = null;
-    
-    public String debugMessage = null; 
-    
+
+    public String debugMessage = null;
+
     Calendar time = Calendar.getInstance();
-    
+
     int hour = time.get(Calendar.HOUR);
-    
+
     String stringHour = Integer.toString(hour);
-    
-    public String price1; 
-    
-    public void setPrice1(){
+
+    public String price1;
+
+    public void setPrice1() {
         for (int i = 0; i < schedules.size(); i++) {
             ScheduleItem schedule = schedules.get(i);
             //checking if local hour equals schedule hour
@@ -50,11 +51,10 @@ public class Meter {
             }
         }
     }
-    
-    public String getPrice1(){
-        return price1; 
+
+    public String getPrice1() {
+        return price1;
     }
-    
 
     public Integer getId() {
         return id;
@@ -72,27 +72,100 @@ public class Meter {
         this.location = location;
     }
 
-    public String getPrice(){
+    public String getPrice() {
         return price;
     }
-    
 
     public void setPrice(String price) {
-        
+
         this.price = price;
-    
+
     }
-    
+
+    // Retrieve all schedules
+    public List<ScheduleItem> getAllSchedules() {
+        return schedules;
+    }
+
     // function adds scheduleItem's to meter list
-    public String addSchedule(ScheduleItem schedule){
-        //adding schedule to meter
-        schedules.add(schedule);
-        return "Schedule added to meter";
+    public void addSchedule(ScheduleItem schedule) {
+        lastScheduleId = lastScheduleId + 1;
+        
+        schedule.setId(lastScheduleId);
+
+        List<ScheduleItem> newschedules = new ArrayList<ScheduleItem>(schedules);
+        schedules.clear();
+        
+        if (newschedules.isEmpty()) {
+            schedules.add(schedule);
+        } else {
+            for (ScheduleItem item : newschedules) {
+                schedules.add(item);
+                if (schedule.getTimeInt() > item.getTimeInt()) {
+                    schedules.add(schedule);
+                }; 
+            }
+        }
+    }
+
+    public ScheduleItem updateSchedule(ScheduleItem schedule) {
+
+        for (Iterator<ScheduleItem> it = getAllSchedules().iterator(); it.hasNext();) {
+            ScheduleItem sc = it.next();
+
+            //won't update schedule if fields are null
+            if (schedule.getId().equals(sc.getId())) {
+
+                //sc.setPrice(null);
+                //sc.setTime(null);
+                if (schedule.getPrice() != null) {
+                    sc.setPrice(schedule.getPrice());
+                }
+
+                if (schedule.getTime() != null) {
+                    sc.setTime(schedule.getTime());
+                }
+            }
+        }
+
+        return schedule;
+    }
+
+    public boolean deleteSchedule(Integer id) {
+
+        Iterator<ScheduleItem> it = getAllSchedules().iterator();
+
+        while (it.hasNext()) {
+            ScheduleItem en = it.next();
+            if (id.equals(en.getId())) {
+                it.remove();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public ScheduleItem getScheduleById(Integer id) {
+        ScheduleItem schedule = null;
+        for (ScheduleItem sc : getAllSchedules()) {
+            if (id.equals(sc.getId())) {
+                schedule = sc;
+                break;
+            }
+        }
+        return schedule;
+    }
+
+    public Double calculatePrice(Date startTime, Integer hours)  {
+        
+        
+        
+        return new Double(0);
     }
     
     @Override
     public String toString() {
-        return "Entity{" + "id=" + id
+        return "Meter{" + "id=" + id
                 + ", Location=" + location
                 + ", Price=" + price
                 + '}';
@@ -121,5 +194,5 @@ public class Meter {
         }
         return true;
     }
-    
+
 }

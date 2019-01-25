@@ -3,25 +3,31 @@
     <lastMeterId>4</lastMeterId>
     <meters>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>1</id>
             <location>Location0</location>
             <price>Price0</price>
-            <time>2019-01-02T15:57:27.932Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.059Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>3</id>
             <location>location_update</location>
             <price>price_update</price>
-            <time>2019-01-02T15:57:27.977Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.122Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
         <meter>
+            <lastScheduleId>0</lastScheduleId>
             <id>4</id>
             <location>Location3</location>
             <price>Price3</price>
-            <time>2019-01-02T15:57:27.999Z</time>
-            <hour>3</hour>
+            <time>2019-01-24T22:18:16.149Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>

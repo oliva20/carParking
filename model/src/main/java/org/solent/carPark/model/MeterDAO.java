@@ -17,4 +17,5 @@ public interface MeterDAO {
     public List<Meter> retrieveMatchingMeters(Meter meterTemplate);
 
     public Meter updateMeter(Meter meter);
+    
 }

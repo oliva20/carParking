@@ -192,7 +192,6 @@ public class MeterDAOJaxbImpl implements MeterDAO {
         }
         return null; //entity not found
     }
-
     /**
      * copies new Entity data transfer objects to create detached object and so avoid problems with indirect object modification
      *

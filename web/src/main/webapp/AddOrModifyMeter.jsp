@@ -101,6 +101,8 @@
             <input type="hidden" name="meterId" value="<%=meterId%>">
             <input type="submit" value="Modify Meter">
             <% }%>
+     
+            
         </form>
         <form action="ListMeters.jsp">
             <input type="submit" value="Cancel and Return">

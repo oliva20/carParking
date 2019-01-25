@@ -7,6 +7,7 @@ package org.solent.carPark.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,12 +22,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class ScheduleItem {
+    
+    private String time;
 
-    public String time;
+    private String price;
 
-    public String price;
-
-    public Integer id;
+    private Integer id;
     
     public void setTime(String time){
         this.time = time; 
@@ -39,7 +40,12 @@ public class ScheduleItem {
     public void setId(Integer id){
         this.id = id; 
     }
-      
+    
+    public int getTimeInt(){
+        Integer nTime = Integer.valueOf(time);
+        return nTime;
+    }
+    
     public String getTime(){   
         return time;
     }
@@ -50,6 +56,38 @@ public class ScheduleItem {
     
     public Integer getId(){
         return id;
+    }
+    
+ @Override
+    public String toString() {
+        return "Schedule{" + "id=" + id
+                + ", Price=" + price
+                + ", Time=" + time
+                + '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ScheduleItem other = (ScheduleItem) obj;
+        if (!Objects.equals(this.price, other.price)) {
+            return false;
+        }
+        if (!Objects.equals(this.time, other.time)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
     
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
-    <lastMeterId>4</lastMeterId>
+    <lastMeterId>1</lastMeterId>
     <meters>
         <meter>
             <schedules>
@@ -8,12 +8,12 @@
                 <price>2</price>
                 <id>1</id>
             </schedules>
-            <id>4</id>
+            <lastScheduleId>1</lastScheduleId>
+            <id>1</id>
             <location>Southampton</location>
-            <time>2019-01-07T18:10:30.852Z</time>
-            <hour>6</hour>
-            <stringHour>6</stringHour>
-            <price1>2</price1>
+            <time>2019-01-24T22:18:19.519Z</time>
+            <hour>10</hour>
+            <stringHour>10</stringHour>
         </meter>
     </meters>
 </meterList>

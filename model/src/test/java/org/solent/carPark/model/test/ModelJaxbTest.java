@@ -59,14 +59,12 @@ public class ModelJaxbTest {
             replyMessage1.setCode(200);
             replyMessage1.setDebugMessage("This is a debug messsage");
 
-            List<Meter> meters = replyMessage1.getMeterList().getMeters();
+            //List<Meter> meters = replyMessage1.getMeterList().getMeters();
 
-            for (int intityId = 0; intityId < 3; intityId++) {
-                Meter meter = new Meter();
-                meter.setId(intityId);
-                meter.setLocation("Southampton "+ intityId);
-                meters.add(meter);
-            }
+            Meter meter = new Meter();
+            meter.setId(2);
+            meter.setLocation("Southampton "+ 2);
+        
 
             // marshal the object lists to system out, a file and a stringWriter
             jaxbMarshaller.marshal(replyMessage1, System.out);

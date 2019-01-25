@@ -115,6 +115,44 @@ public class MeterDAOJaxbImplTest {
         LOG.debug("found : " + retrievedList.get(0));
         assertEquals(searchfor, retrievedList.get(0));
         
+        //Creating a meter
+        Meter m4 = new Meter();
+        
+        m4.setId(1);
+        m4.setLocation("Southampton");
+        
+        //Creating schedules
+        ScheduleItem sc1 = new ScheduleItem(); 
+        sc1.setPrice("2");
+        sc1.setTime("10");
+        
+        LOG.debug("Created schedule: " + sc1);
+        
+        ScheduleItem sc2 = new ScheduleItem(); 
+        sc2.setPrice("2");
+        sc2.setTime("11");
+        
+        LOG.debug("Created schedule: " + sc1);
+        
+        m4.addSchedule(sc1);
+        m4.addSchedule(sc2);
+        
+        LOG.debug("Added schedule: " + sc1);
+        LOG.debug("Added schedule: " + sc2);
+        
+        assertNotNull(m4.getAllSchedules());
+        
+        //check if schedules list size is 3
+        assertEquals(m4.getAllSchedules().size(), 2);
+        
+        //delete schedule
+        m4.deleteSchedule(1);
+        
+        assertEquals(m4.getAllSchedules().size(), 1);
+
+        
+        
+        
     }
 
 }

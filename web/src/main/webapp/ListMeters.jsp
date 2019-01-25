@@ -68,8 +68,6 @@
 
 %>
 
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -86,6 +84,7 @@
                 <th>id</th>
                 <th>Location</th>
                 <th>Price</th>
+                
             </tr>
             <%  for (Meter meter : meterList) {
             %>
@@ -104,6 +103,11 @@
                         <input type="hidden" name="action" value="deleteMeter">
                         <input type="hidden" name="meterId" value="<%=meter.getId()%>">
                         <input type="submit" value="Delete Meter">
+                    </form>
+                    <form action="Meter.jsp">
+                        <input type="hidden" name="action" value="meterUI">
+                        <input type="hidden" name="meterId" value="<%=meter.getId()%>">
+                        <input type="submit" value="Meter UI">
                     </form>
                 </td>
             </tr>

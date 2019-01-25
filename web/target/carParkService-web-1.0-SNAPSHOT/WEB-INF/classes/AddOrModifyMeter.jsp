@@ -25,28 +25,27 @@
 
     // get request values
     String action = (String) request.getParameter("action");
-    String entityIdReq = (String) request.getParameter("entityId");
-    String entityField_AReq = (String) request.getParameter("field_A");
-    String entityField_BReq = (String) request.getParameter("field_B");
-    String entityField_CReq = (String) request.getParameter("field_C");
+    String meterIdReq = (String) request.getParameter("meterId");
+    String meterLocationReq = (String) request.getParameter("location");
+    String meterPriceReq = (String) request.getParameter("price");
 
     String errorMessage = "";
 
-    Entity entity = null;
-    Integer entityId = null;
+    Meter meter = null;
+    Integer meterId = null;
 
-    if ("modifyEntity".equals(action)) {
+    if ("modifyMeter".equals(action)) {
         try {
-            entityId = Integer.parseInt(entityIdReq);
-            entity = serviceFacade.retrieveMeter(entityId);
+            meterId = Integer.parseInt(meterIdReq);
+            meter = serviceFacade.retrieveMeter(meterId);
         } catch (Exception e) {
-            errorMessage = "problem finding entity " + e.getMessage();
+            errorMessage = "problem finding meter " + e.getMessage();
         }
-    } else if ("createEntity".equals(action)) {
+    } else if ("createMeter".equals(action)) {
         try {
-            entity = new Entity();
+            meter = new Meter();
         } catch (Exception e) {
-            errorMessage = "problem finding entity " + e.getMessage();
+            errorMessage = "problem finding meter " + e.getMessage();
         }
     } else {
         errorMessage = "cannot recognise action: " + action;
@@ -58,16 +57,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Edit Entity</title>
+        <title>Edit Meter</title>
     </head>
     <body>
-        <% if ("createEntity".equals(action)) {
+        <% if ("createMeter".equals(action)) {
         %>
-        <h1>Add New Entity</h1>
+        <h1>Add New Meter</h1>
         <% } else {%>
-        <h1>Modify Entity <%=entityId%></h1>
+        <h1>Modify Meter <%=meterId%></h1>
         <% }%>
-        <form action="ListEntities.jsp">
+        <form action="ListMeters.jsp">
             <table>
                 <tr>
                     <th>Field</th>
@@ -75,40 +74,37 @@
                     <th>New Value</th>
                 </tr>
                 <tr>
-                    <td>Entity Id</td>
-                    <td><%=entity.getId()%></td>
+                    <td>Meter Id</td>
+                    <td><%=meter.getId()%></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>field_A</td>
-                    <td><%=entity.getField_A()%></td>
-                    <td><input type="text" name="field_A" value ="<%=entity.getField_A()%>"></td>
+                    <td>Location</td>
+                    <td><%=meter.getLocation()%></td>
+                    <td><input type="text" name="location" value ="<%=meter.getLocation()%>"></td>
                 </tr>
                 <tr>
-                    <td>field_B</td>
-                    <td><%=entity.getField_B()%></td>
-                    <td><input type="text" name="field_B" value ="<%=entity.getField_B()%>"></td>
-                </tr>
-                <tr>
-                    <td>field_C</td>
-                    <td><%=entity.getField_C()%></td>
-                    <td><input type="text" name="field_C" value ="<%=entity.getField_C()%>"></td>
+                    <td>Price</td>
+                    <td><%=meter.getPrice()%></td>
+                    <td><input type="text" name="price" value ="<%=meter.getPrice()%>"></td>
                 </tr>
             </table> 
             <BR>
-            <% if ("createEntity".equals(action)) {
+            <% if ("createMeter".equals(action)) {
             %>
-            <input type="hidden" name="action" value="createEntity">
-            <input type="hidden" name="entityId" value="<%=entityId%>">
-            <input type="submit" value="Create New Entity">
-            <% } else if ("modifyEntity".equals(action)) {
+            <input type="hidden" name="action" value="createMeter">
+            <input type="hidden" name="meterId" value="<%=meterId%>">
+            <input type="submit" value="Create New Meter">
+            <% } else if ("modifyMeter".equals(action)) {
             %>
-            <input type="hidden" name="action" value="modifyEntity">
-            <input type="hidden" name="entityId" value="<%=entityId%>">
-            <input type="submit" value="Modify Entity">
+            <input type="hidden" name="action" value="modifyMeter">
+            <input type="hidden" name="meterId" value="<%=meterId%>">
+            <input type="submit" value="Modify Meter">
             <% }%>
+     
+            
         </form>
-        <form action="ListEntities.jsp">
+        <form action="ListMeters.jsp">
             <input type="submit" value="Cancel and Return">
         </form>
     </body>

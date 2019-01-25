@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <meterList>
-    <lastMeterId>15</lastMeterId>
+    <lastMeterId>22</lastMeterId>
     <meters>
         <meter>
-            <id>15</id>
-            <location>Southamtpon</location>
+            <id>22</id>
+            <location>Southampton</location>
             <price>2</price>
-            <time>2019-01-05T16:29:57.673Z</time>
-            <hour>4</hour>
+            <time>2019-01-17T13:04:06.047Z</time>
+            <hour>1</hour>
+            <stringHour>1</stringHour>
         </meter>
     </meters>
 </meterList>
